@@ -1,0 +1,13 @@
+%include <singlenode.h>
+%include <head.h>
+
+module load conda
+conda activate npl-2025a
+
+member=$(echo %TASK% | cut -c 18-)
+echo %FCSTDATE% $member
+cd %FCST_HOME%/bin/
+
+python init_cond_noahmp.py --date %FCSTDATE% --ens $member
+
+%include <tail.h>

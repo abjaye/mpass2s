@@ -1,0 +1,18 @@
+%include <multinode.h>
+%include <head.h>
+
+module load ecflow
+module load ncarenv/23.09
+module load craype/2.7.31
+module load gcc/12.2.0
+module load ncarcompilers/1.0.0
+module load cray-mpich/8.1.27
+module load parallel-netcdf/1.12.3
+module load netcdf/4.9.2
+
+member=$(echo %TASK% | cut -c 12-)
+echo %FCSTDATE% $member
+cd %FCST_WORK%/%MPAS_WORKFLOW%_%FCSTDATE%.$member
+mpiexec ./atmosphere_model
+
+%include <tail.h>

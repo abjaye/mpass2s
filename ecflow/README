@@ -1,0 +1,10 @@
+To run:
+
+bash
+cd mpass2s/ecflow
+export MPAS_WORKFLOW=mpass2s
+python workflow.py --date 2015-04-06
+export ECF_HOST=derecho7
+export ECF_PORT=40179
+python mpass2s_2015_04_06/client.py
+ecflow_ui &

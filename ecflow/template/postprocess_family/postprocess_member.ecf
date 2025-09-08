@@ -1,0 +1,13 @@
+%include <develop.h>
+%include <head.h>
+
+module load intel netcdf ncl nco
+module load cdo
+module load conda
+conda activate npl-2025a
+member=$(echo %TASK% | cut -c 20-)
+cd %FCST_HOME%/bin/
+
+python postprocess.py --date %FCSTDATE% --ens $member
+
+%include <tail.h>

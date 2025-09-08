@@ -1,0 +1,11 @@
+%include <singlenode.h>
+%include <head.h>
+
+module load conda
+conda activate npl-2025a
+
+cd %FCST_HOME%/bin/
+
+python build_ens.py --date %FCSTDATE% --ensemble-start %ENSEMBLE_START% --ensemble-end %ENSEMBLE_END%
+
+%include <tail.h>
