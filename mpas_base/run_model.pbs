@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+#
+# For more information on submitting jobs to Derecho, see this documentation:
+# https://ncar-hpc-docs.readthedocs.io/en/latest/pbs/job-scripts/
+#
+
+#--- Give our job a reasonable name
+#PBS -N mpas
+#PBS -A CESM0020
+#PBS -l walltime=04:00:00
+#PBS -q main
+#PBS -l job_priority=regular
+#PBS -j oe
+#PBS -k eod
+#PBS -l select=8:ncpus=128:mpiprocs=128:mem=235GB
+
+module --force purge
+module load ncarenv/23.09
+module load craype/2.7.31
+module load gcc/12.2.0
+module load ncarcompilers/1.0.0
+module load cray-mpich/8.1.27
+module load parallel-netcdf/1.12.3
+module load netcdf/4.9.2
+
+mpiexec ./atmosphere_model
