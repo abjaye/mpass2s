@@ -12,6 +12,7 @@ skintemp
 q2
 cape
 lcl
+lfc
 cin
 tslb
 sh2o
@@ -24,7 +25,8 @@ hfx
 lh
 sfcrunoff
 udrunoff
-rainlsm
 glw
 gsw
 grdflx
+sfc_albedo
+cldfrac_tot_UPP
