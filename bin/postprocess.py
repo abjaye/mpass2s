@@ -230,7 +230,7 @@ if __name__ == '__main__':
         #path2 = f"{outroot}/{workflow}_latlon/{name}/{yyyy}/{mm}/"
         #if not os.path.exists(path2):
         #    os.system(f"mkdir -p {path2}")
-        #filename = f"{path1}{name}_{workflow}_{outdate}_00z_unst_d46_m{mem}.nc"
+        filename = f"{path1}{name}_{workflow}_{outdate}_00z_unst_d46_m{mem}.nc"
         #filename_regrid = f"{path2}{name}_{workflow}_{outdate}_00z_d01_d46_m{mem}.nc"
         encoding = {var: comp for var in ds.data_vars}
         ds.to_netcdf(filename,unlimited_dims="Time",encoding=encoding,mode="w")
