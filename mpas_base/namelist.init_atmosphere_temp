@@ -13,7 +13,7 @@
 
 &data_sources
     config_met_prefix = 'ERA5'
-    config_use_spechumd = false
+    config_use_spechumd = true
 /
 
 &vertical_grid
